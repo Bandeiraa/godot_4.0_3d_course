@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://ct8b3wlmjlsyp"]
+
+[sub_resource type="Gradient" id="Gradient_426oe"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ns55q"]
+gradient = SubResource("Gradient_426oe")
+
+[sub_resource type="Curve" id="Curve_lptet"]
+_data = [Vector2(0, 0.509091), 0.0, 1.30622, 0, 0, Vector2(1, 0), -0.670762, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pmmrg"]
+curve = SubResource("Curve_lptet")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muxed"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 2, 0)
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_pmmrg")
+color_ramp = SubResource("GradientTexture1D_ns55q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0do7"]
+diffuse_mode = 3
+specular_mode = 1
+metallic = 0.5
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_g7su0"]
+material = SubResource("StandardMaterial3D_e0do7")
+
+[node name="SprintParticles" type="GPUParticles3D"]
+emitting = false
+amount = 64
+lifetime = 0.3
+process_material = SubResource("ParticleProcessMaterial_muxed")
+draw_pass_1 = SubResource("SphereMesh_g7su0")

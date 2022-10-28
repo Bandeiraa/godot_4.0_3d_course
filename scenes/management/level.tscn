@@ -1,0 +1,161 @@
+[gd_scene load_steps=24 format=3 uid="uid://dqbpjo8uhq7ri"]
+
+[ext_resource type="Script" path="res://scripts/environment/navigation_region.gd" id="1_17m0j"]
+[ext_resource type="Shader" path="res://resources/shaders/sky.gdshader" id="2_2ch6x"]
+[ext_resource type="MeshLibrary" uid="uid://desfv8pfp7pxr" path="res://resources/grid_map/large_forest_block_mesh.tres" id="2_gh0kb"]
+[ext_resource type="PackedScene" uid="uid://d2ucfcmugjtl5" path="res://scenes/characters/duck.tscn" id="2_twpiv"]
+[ext_resource type="Shader" uid="uid://c2phbx787soc4" path="res://resources/shaders/pixelation.tres" id="3_pgspq"]
+[ext_resource type="Texture2D" uid="uid://vbvrbehsdte4" path="res://icon.svg" id="3_rgcg3"]
+[ext_resource type="PackedScene" uid="uid://cb2bn6sbswmcr" path="res://scenes/object/static/forest_tree.tscn" id="5_m6ak3"]
+[ext_resource type="PackedScene" uid="uid://c74xc686jlwdy" path="res://scenes/object/grass.tscn" id="7_hafu4"]
+[ext_resource type="Shader" path="res://resources/shaders/toon_water.gdshader" id="7_vb74o"]
+[ext_resource type="Script" path="res://scripts/environment/enemy_manager.gd" id="10_4siox"]
+[ext_resource type="PackedScene" uid="uid://c546vx1avd1s3" path="res://scenes/enemies/enemy_template.tscn" id="10_rtvdo"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_tnuw5"]
+vertices = PackedVector3Array(-7, 0.5, -1.5, -6.5, 0.5, -1, -5, 0.5, -3.5, -7, 0.5, -4.5, -12.5, 0.5, -12.5, -9, 0.5, -4.5, -7, 0.5, -4.5, -2, 0.5, -12.5, -7, 0.5, -4.5, -5, 0.5, -3.5, -3.5, 0.5, -3.5, -2, 0.5, -12.5, -12.5, 0.5, -3, -9.5, 0.5, -3, -9, 0.5, -4.5, -12.5, 0.5, -12.5, -2.5, 0.5, -1, 3, 0.5, 3.5, 4.5, 0.5, 3.5, -3.5, 0.5, -3.5, -2.5, 0.5, -1, 4.5, 0.5, 3.5, 9, 0.5, -8, 9, 0.5, -12.5, -2, 0.5, -12.5, 5, 0.5, 6, 3, 0.5, 6.5, 3, 0.5, 8.5, 9, 0.5, 9.5, 3, 0.5, 8.5, 1.5, 0.5, 9, 1.5, 0.5, 14.5, 9, 0.5, 14.5, 9, 0.5, 9.5, 14.5, 0.5, 1, 14.5, 0.5, -6.5, 10, 0.5, -6.5, 9, 0.5, 9.5, 14.5, 0.5, 9, 14.5, 0.5, 1, 10, 0.5, -6.5, 9, 0.5, -8, 4.5, 0.5, 3.5, 4.5, 0.5, 3.5, 5, 0.5, 6, 9, 0.5, 9.5, -8.5, 0.5, -0.5, -6.5, 0.5, -1, -7, 0.5, -1.5, -9, 0.5, -1.5, -5.5, 0.5, 2, -8, 0.5, 2.5, -12.5, 0.5, 5.5, -5.5, 0.5, 2, 0, 0.5, 6.5, 2, 0.5, 6, 2, 0.5, 4, -3, 0.5, 0, -5.5, 0.5, -0.5, 0, 0.5, 8.5, 0, 0.5, 6.5, -5.5, 0.5, 2, -12.5, 0.5, 5.5, -12.5, 0.5, 14.5, -5.5, 0.5, 14.5, -9, 0.5, -1.5, -9.5, 0.5, -3, -12.5, 0.5, -3, -8, 0.5, 2.5, -8.5, 0.5, -0.5, -9, 0.5, -1.5, -12.5, 0.5, -3, -12.5, 0.5, 5.5, 1.5, 0.5, 14.5, 1.5, 0.5, 9, 0, 0.5, 8.5, -5.5, 0.5, 14.5, 2, 0.5, 4, 3, 0.5, 3.5, -2.5, 0.5, -1, -3, 0.5, 0)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(18, 17, 16), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22), PackedInt32Array(22, 19, 23), PackedInt32Array(23, 19, 24), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 28), PackedInt32Array(30, 29, 31), PackedInt32Array(31, 29, 33), PackedInt32Array(31, 33, 32), PackedInt32Array(36, 35, 34), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 42), PackedInt32Array(42, 39, 37), PackedInt32Array(37, 39, 38), PackedInt32Array(45, 44, 43), PackedInt32Array(47, 46, 48), PackedInt32Array(48, 46, 49), PackedInt32Array(50, 52, 51), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 57), PackedInt32Array(57, 54, 53), PackedInt32Array(57, 53, 58), PackedInt32Array(60, 59, 61), PackedInt32Array(61, 59, 64), PackedInt32Array(61, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(66, 65, 67), PackedInt32Array(69, 68, 70), PackedInt32Array(70, 68, 71), PackedInt32Array(71, 68, 72), PackedInt32Array(74, 73, 75), PackedInt32Array(75, 73, 76), PackedInt32Array(80, 79, 77), PackedInt32Array(77, 79, 78)]
+geometry_parsed_geometry_type = 1
+cell_size = 0.5
+agent_height = 1.0
+agent_radius = 1.0
+agent_max_climb = 0.5
+filter_ledge_spans = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcqdk"]
+shader = ExtResource("2_2ch6x")
+shader_parameter/color_bottom = Color(1, 0.74, 0.39, 1)
+shader_parameter/color_horizon = Color(1, 0.4, 0.42, 1)
+shader_parameter/color_top = Color(0.91, 0.14, 1, 1)
+shader_parameter/exponent_factor_bottom = 1.0
+shader_parameter/exponent_factor_top = 1.0
+shader_parameter/intensity_amp = 1.0
+
+[sub_resource type="Sky" id="Sky_rmjm0"]
+sky_material = SubResource("ShaderMaterial_dcqdk")
+
+[sub_resource type="Environment" id="Environment_6kcv5"]
+background_mode = 2
+sky = SubResource("Sky_rmjm0")
+ambient_light_source = 3
+reflected_light_source = 2
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 0.7
+glow_strength = 1.1
+glow_bloom = 0.1
+glow_hdr_threshold = 0.9
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_gi_inject = 3.0
+volumetric_fog_ambient_inject = 0.4
+
+[sub_resource type="FogMaterial" id="FogMaterial_sr6p3"]
+edge_fade = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ufups"]
+shader = ExtResource("3_pgspq")
+shader_parameter/Pixelation = 256.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1eddq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3a8p0"]
+noise = SubResource("FastNoiseLite_1eddq")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rwgfb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_erolm"]
+noise = SubResource("FastNoiseLite_rwgfb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eokkb"]
+render_priority = 0
+shader = ExtResource("7_vb74o")
+shader_parameter/_DepthFactor = 1.0
+shader_parameter/_DepthGradientDeep = Color(0.086, 0.407, 1, 0.749)
+shader_parameter/_DepthGradientShallow = Color(0.325, 0.807, 0.971, 0.725)
+shader_parameter/_DepthMaxDistance = 1.0
+shader_parameter/beer_factor = 0.8
+shader_parameter/distortNoise = SubResource("NoiseTexture2D_3a8p0")
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/foam_max_distance = 0.4
+shader_parameter/foam_min_distance = 0.04
+shader_parameter/surfaceNoise = SubResource("NoiseTexture2D_erolm")
+shader_parameter/surface_distortion_amount = 0.27
+shader_parameter/surface_noise_cutoff = 0.777
+shader_parameter/surface_noise_scroll = null
+shader_parameter/surface_noise_tiling = null
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qe8if"]
+material = SubResource("ShaderMaterial_eokkb")
+size = Vector2(200, 200)
+
+[node name="Level" type="Node3D"]
+
+[node name="NavigationRegion" type="NavigationRegion3D" parent="."]
+navmesh = SubResource("NavigationMesh_tnuw5")
+script = ExtResource("1_17m0j")
+
+[node name="Map" type="GridMap" parent="NavigationRegion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh_library = ExtResource("2_gh0kb")
+data = {
+"cells": PackedInt32Array(2, 1, 6, 65535, 1, 6, 65532, 1, 6, 65529, 1, 6, 65529, 65534, 6, 65532, 65534, 6, 65535, 65534, 6, 2, 65534, 6, 2, 4, 6, 65535, 4, 6, 65532, 4, 6, 65529, 4, 6, 65529, 7, 6, 65532, 7, 6, 65535, 7, 6, 2, 7, 6, 65530, 65533, 0, 65530, 0, 0, 65530, 3, 0, 65530, 6, 0, 65533, 6, 0, 65533, 3, 0, 65533, 0, 0, 65533, 65533, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 65533, 0, 3, 65533, 0, 3, 0, 0, 3, 3, 0, 3, 6, 0, 6, 65533, 0, 6, 0, 0, 6, 3, 0, 3, 65530, 0, 0, 65530, 0, 65533, 65530, 0, 65530, 65530, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Tree" type="Node3D" parent="NavigationRegion"]
+
+[node name="ForestTree" parent="NavigationRegion/Tree" instance=ExtResource("5_m6ak3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.5, 0, 5)
+
+[node name="ForestTree2" parent="NavigationRegion/Tree" instance=ExtResource("5_m6ak3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.17196, 0, -1.67116)
+
+[node name="ForestTree3" parent="NavigationRegion/Tree" instance=ExtResource("5_m6ak3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.00911, 0, -2.94102)
+
+[node name="ForestTree4" parent="NavigationRegion/Tree" instance=ExtResource("5_m6ak3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.03603, 0, 0.813489)
+
+[node name="ForestTree5" parent="NavigationRegion/Tree" instance=ExtResource("5_m6ak3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.52808, 0, 7.61528)
+
+[node name="PostProcessing" type="Node3D" parent="."]
+
+[node name="WorldEnv" type="WorldEnvironment" parent="PostProcessing"]
+environment = SubResource("Environment_6kcv5")
+
+[node name="Light" type="DirectionalLight3D" parent="PostProcessing"]
+transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 8, 0)
+shadow_enabled = true
+
+[node name="Fog" type="FogVolume" parent="PostProcessing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+extents = Vector3(100, 4, 100)
+shape = 0
+material = SubResource("FogMaterial_sr6p3")
+
+[node name="Duck" parent="." instance=ExtResource("2_twpiv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12652, 0.0740371, 1.68169)
+
+[node name="Pixelation" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ufups")
+scale = Vector2(9, 5.0625)
+texture = ExtResource("3_rgcg3")
+centered = false
+
+[node name="Grass" type="Node3D" parent="."]
+
+[node name="Grass" parent="Grass" instance=ExtResource("7_hafu4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.06709, 0, -2.83124)
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+mesh = SubResource("PlaneMesh_qe8if")
+
+[node name="EnemyManager" type="Node3D" parent="."]
+script = ExtResource("10_4siox")
+path_to_player = NodePath("../Duck")
+
+[node name="EnemyTemplate" parent="EnemyManager" instance=ExtResource("10_rtvdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.65752, -3.57628e-07, -11.0078)

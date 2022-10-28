@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://1uwhvg8fkyqd"]
+
+[ext_resource type="Script" path="res://scripts/object/static_object.gd" id="1_tagki"]
+
+[sub_resource type="Animation" id="Animation_llljo"]
+resource_name = "squash_and_stretch"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(2, 2, 2), Vector3(2.2, 2.2, 2.2), Vector3(2, 2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_cpodm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8et5r"]
+_data = {
+"RESET": SubResource("Animation_cpodm"),
+"squash_and_stretch": SubResource("Animation_llljo")
+}
+
+[node name="StaticObject" type="StaticBody3D" groups=["object"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_tagki")
+
+[node name="Object" type="Node3D" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8et5r")
+}
