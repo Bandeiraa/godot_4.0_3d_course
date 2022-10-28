@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Node3D",
+"class": &"ArmPivot",
+"language": &"GDScript",
+"path": "res://scripts/character/arm_pivot.gd"
+}, {
 "base": "SpringArm3D",
 "class": &"CameraArm",
 "language": &"GDScript",
@@ -23,6 +28,31 @@ _global_script_classes=[{
 "class": &"CharacterArrow",
 "language": &"GDScript",
 "path": "res://scripts/object/arrow.gd"
+}, {
+"base": "Node",
+"class": &"CharacterAttackState",
+"language": &"GDScript",
+"path": "res://scripts/character/states/attack_state.gd"
+}, {
+"base": "Node",
+"class": &"CharacterJumpState",
+"language": &"GDScript",
+"path": "res://scripts/character/states/jump_state.gd"
+}, {
+"base": "Node",
+"class": &"CharacterKnockbackState",
+"language": &"GDScript",
+"path": "res://scripts/character/states/knockback_state.gd"
+}, {
+"base": "Node",
+"class": &"CharacterMoveState",
+"language": &"GDScript",
+"path": "res://scripts/character/move_state.gd"
+}, {
+"base": "Node",
+"class": &"CharacterStateManager",
+"language": &"GDScript",
+"path": "res://scripts/character/states/state_manager.gd"
 }, {
 "base": "RigidBody3D",
 "class": &"CharacterTemplate",
@@ -70,9 +100,15 @@ _global_script_classes=[{
 "path": "res://scripts/object/static_object.gd"
 }]
 _global_script_class_icons={
+"ArmPivot": "",
 "CameraArm": "",
 "CharacterAnimation": "",
 "CharacterArrow": "",
+"CharacterAttackState": "",
+"CharacterJumpState": "",
+"CharacterKnockbackState": "",
+"CharacterMoveState": "",
+"CharacterStateManager": "",
 "CharacterTemplate": "",
 "EnemyAnimation": "",
 "EnemyDetectionArea": "",

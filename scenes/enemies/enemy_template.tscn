@@ -2554,6 +2554,21 @@ tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
+[sub_resource type="Animation" id="Animation_kwssc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../HurtBox/Collision:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_3rfrf"]
 resource_name = "Roll"
 length = 1.1
@@ -3960,21 +3975,6 @@ tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_kwssc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../HurtBox/Collision:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yll0t"]
 _data = {
 "Attack(1h)": SubResource("Animation_an7qw"),
@@ -4133,7 +4133,7 @@ mesh = SubResource("ArrayMesh_e8uv1")
 skeleton = NodePath("")
 
 [node name="LeftArm" type="BoneAttachment3D" parent="Body/AnimatedEnemy/Skeleton"]
-transform = Transform3D(-4.76837e-07, 0.471936, -0.881633, 1.37091e-06, -0.881633, -0.471936, -1, -1.37091e-06, -4.76837e-07, 0.14, 0.691598, -1.3027e-15)
+transform = Transform3D(-3.57628e-07, 0.471936, -0.881633, 1.35601e-06, -0.881633, -0.471936, -1, -1.35601e-06, -3.57628e-07, 0.14, 0.691598, -1.3027e-15)
 bone_name = "armLeft"
 bone_idx = 2
 
@@ -4153,12 +4153,12 @@ mesh = SubResource("ArrayMesh_8lbon")
 skeleton = NodePath("")
 
 [node name="LeftSlot" type="BoneAttachment3D" parent="Body/AnimatedEnemy/Skeleton"]
-transform = Transform3D(-1, 4.76837e-07, 8.04663e-07, 8.34465e-07, -1.37091e-06, 1, 2.26586e-07, 1, 1.43367e-06, 0.4, 0.205887, -7.55263e-07)
+transform = Transform3D(-1, 3.57628e-07, 7.7486e-07, 7.7486e-07, -1.35601e-06, 1, 3.24652e-07, 1, 1.36428e-06, 0.4, 0.205887, -7.47053e-07)
 bone_name = "handSlotLeft"
 bone_idx = 3
 
 [node name="RightSlot" type="BoneAttachment3D" parent="Body/AnimatedEnemy/Skeleton"]
-transform = Transform3D(-1, 0, 5.96046e-07, 5.66244e-07, 0, 1, 0, 1, 0, -0.4, 0.205887, 5.07587e-15)
+transform = Transform3D(-1, 0, 5.96046e-07, 5.96046e-07, 0, 1, 0, 1, 0, -0.4, 0.205887, 5.07587e-15)
 bone_name = "handSlotRight"
 bone_idx = 5
 

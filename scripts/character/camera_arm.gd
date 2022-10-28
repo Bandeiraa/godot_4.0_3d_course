@@ -3,6 +3,10 @@ class_name CameraArm
 
 @export var zoom_step: float = 0.4
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	
 func _unhandled_input(event) -> void:
 	if not event is InputEventMouseButton:
 		return

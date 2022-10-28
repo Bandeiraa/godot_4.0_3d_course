@@ -310,28 +310,21 @@ shape = SubResource("CapsuleShape3D_bpbjc")
 
 [node name="Skeleton" parent="Body/AnimatedCharacter" index="0"]
 bones/0/rotation = Quaternion(0, 4.37114e-08, 2.84217e-14, 1)
-bones/1/rotation = Quaternion(0, 0, 0, 1)
-bones/2/position = Vector3(0.14, 0.691598, -1.3027e-15)
-bones/2/rotation = Quaternion(-0.685863, -0.172023, 0.685863, -0.172022)
-bones/3/rotation = Quaternion(0.606617, -0.606617, 0.36334, 0.36334)
-bones/4/position = Vector3(-0.14, 0.691598, 8.40813e-15)
-bones/4/rotation = Quaternion(-0.685863, 0.172023, 0.685863, 0.172023)
-bones/5/rotation = Quaternion(0.36334, -0.36334, 0.606617, 0.606617)
 
 [node name="Head" parent="Body/AnimatedCharacter/Skeleton" index="0"]
-transform = Transform3D(1, -5.68434e-14, 8.74228e-08, 5.68434e-14, 1, 2.4847e-21, -8.74228e-08, 2.4847e-21, 1, -4.04496e-14, 0.711598, 1.76811e-21)
+transform = Transform3D(0.684491, -0.0309637, 0.728363, 0.0019251, 0.999171, 0.040667, -0.729019, -0.026434, 0.683983, -5.535e-08, 0.711598, -0.0928618)
 
 [node name="Body" parent="Body/AnimatedCharacter/Skeleton" index="1"]
-transform = Transform3D(1, -5.68434e-14, 8.74228e-08, 5.68434e-14, 1, 2.4847e-21, -8.74228e-08, 2.4847e-21, 1, 0, 0, 0)
+transform = Transform3D(1, -5.68434e-14, 8.74228e-08, 5.68434e-14, 1, 2.4847e-21, -8.74228e-08, 2.4847e-21, 1, -5.535e-08, 5.535e-08, -0.0928618)
 
 [node name="LeftArm" parent="Body/AnimatedCharacter/Skeleton" index="2"]
-transform = Transform3D(-4.45051e-07, 0.471936, -0.881633, 1.35601e-06, -0.881633, -0.471936, -1, -1.39726e-06, -2.80553e-07, 0.14, 0.691598, -1.22392e-08)
+transform = Transform3D(-0.148407, 0.819672, -0.553276, -0.988814, -0.114569, 0.0955, 0.0148905, 0.56126, 0.827506, 0.125561, 0.691598, -0.0675941)
 
 [node name="RightArm" parent="Body/AnimatedCharacter/Skeleton" index="3"]
-transform = Transform3D(-8.74228e-08, -0.471937, -0.881632, -2.4847e-21, -0.881632, 0.471937, -1, 4.1258e-08, 7.70748e-08, -0.14, 0.691598, 1.22392e-08)
+transform = Transform3D(0.447844, 0.518567, -0.728371, -0.840664, -0.0332184, -0.540538, -0.3045, 0.854391, 0.421064, -0.37334, 0.655485, -0.168667)
 
 [node name="LeftSlot" parent="Body/AnimatedCharacter/Skeleton" index="4"]
-transform = Transform3D(-1, 4.45051e-07, 7.7486e-07, 7.7486e-07, -1.35601e-06, 1, 4.12075e-07, 1, 1.36428e-06, 0.4, 0.205887, -7.82022e-07)
+transform = Transform3D(-0.0814897, -0.563589, -0.826195, -0.99912, 0.0828479, 0.0420311, 0.0446072, 0.82606, -0.567897, 0.577136, 0.62848, 0.241616)
 
 [node name="BlueBow" type="MeshInstance3D" parent="Body/AnimatedCharacter/Skeleton/LeftSlot" index="0"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 0.999999, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37113e-08, 0, 0, 0)
@@ -351,4 +344,4 @@ mesh = SubResource("ArrayMesh_5oydt")
 skeleton = NodePath("")
 
 [node name="RightSlot" parent="Body/AnimatedCharacter/Skeleton" index="5"]
-transform = Transform3D(-1, 8.74228e-08, 5.96046e-07, 5.96046e-07, 2.4847e-21, 1, 8.74228e-08, 1, -4.9738e-14, -0.4, 0.205887, 3.49692e-08)
+transform = Transform3D(-0.49431, 0.866222, -0.0729241, -0.248903, -0.06066, 0.966627, 0.832889, 0.495964, 0.24559, -0.0876499, 0.637184, 0.302036)

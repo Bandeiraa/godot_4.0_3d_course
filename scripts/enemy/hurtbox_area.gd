@@ -10,4 +10,4 @@ func _ready() -> void:
 	
 func on_body_entered(body) -> void:
 	if body.is_in_group("character"):
-		print(body.name)
+		body.update_health("decrease", damage)
