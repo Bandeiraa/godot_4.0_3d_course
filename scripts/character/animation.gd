@@ -5,6 +5,7 @@ class_name CharacterAnimation
 
 @onready var state_manager: Node = get_node("%StateManager")
 @onready var move_state: Node = state_manager.get_node("Move")
+@onready var character: RigidBody3D = get_parent()
 
 @onready var animation: AnimationPlayer = get_node("Animation")
 
@@ -16,7 +17,7 @@ func update(input: Vector3, delta: float, is_on_floor: bool) -> void:
 	
 	
 func align(input: Vector3, delta: float, is_on_floor: bool) -> void:
-	if input == Vector3.ZERO:
+	if input == Vector3.ZERO or character.freeze or state_manager.on_knockback:
 		return
 		
 	particles_handler(is_on_floor)

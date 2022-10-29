@@ -6,6 +6,7 @@ class_name CharacterArrow
 var is_placed: bool = false
 
 @export var speed: float = 20.0
+@export var damage: int = 5
 
 func _physics_process(delta: float) -> void:
 	var forward_direction: Vector3 = global_transform.basis.z.normalized()
@@ -13,6 +14,11 @@ func _physics_process(delta: float) -> void:
 	
 	
 func on_body_entered(body) -> void:
+	if body.is_in_group("enemy"):
+		body.update_health(damage, global_position)
+		queue_free()
+		
+		
 	if is_placed and body.is_in_group("character"):
 		queue_free()
 		

@@ -2,7 +2,7 @@ extends Area3D
 class_name EnemyDetectionArea
 
 @onready var _body: Node3D = get_node("%Body")
-@onready var parent: RigidBody3D = get_parent()
+@onready var enemy: RigidBody3D = get_parent()
 
 var player_ref: RigidBody3D = null
 var move_state: String = "walk"
@@ -18,7 +18,7 @@ func get_speed() -> float:
 	
 	if distance <= 1.5 and not is_attacking:
 		is_attacking = true
-		parent.freeze = true
+		enemy.freeze = true
 		_body.action_behavior("attack_spinning")
 		return 0.0
 		

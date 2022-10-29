@@ -52,7 +52,7 @@ func update_health(type: String, value: int, enemy_position: Vector3) -> void:
 	if type == "decrease":
 		health -= value
 		var direction: Vector3 = global_position.direction_to(enemy_position)
-		state_manager.initialize_knockback_timer(0.1, direction)
+		state_manager.initialize_knockback_timer(0.1, direction.normalized())
 		
 	if type == "increase":
 		health += value
