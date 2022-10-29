@@ -25,30 +25,14 @@ func _physics_process(delta: float) -> void:
 	var input: Vector3 = move_state.get_input()
 	
 	twist_pivot.update(delta)
-	body.update(input, delta)
+	body.update(input, delta, is_on_floor())
 	dead_by_height()
 	
 	
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	state_manager.update(state)
-		#Responsabilidade do Body
-		#if not is_on_floor():
-		#	change_particles_state(false)
-		#	return
-			
-		#change_particles_state(is_sprinting())
-		
-	#if not body.on_action: 
-	#	vertical_movement()
-	#	attack()
-		
-		
-#func change_particles_state(state: bool) -> void:
-#	for children in body_container.get_children():
-#		if children is GPUParticles3D:
-#			children.emitting = state
-				
-				
+	
+	
 func is_on_floor() -> bool:
 	if floor_ray.is_colliding():
 		return true
@@ -64,9 +48,11 @@ func dead_by_height() -> void:
 		get_tree().root.add_child(child)
 		
 		
-func update_health(type: String, value: int) -> void:
+func update_health(type: String, value: int, enemy_position: Vector3) -> void:
 	if type == "decrease":
 		health -= value
+		var direction: Vector3 = global_position.direction_to(enemy_position)
+		state_manager.initialize_knockback_timer(0.1, direction)
 		
 	if type == "increase":
 		health += value

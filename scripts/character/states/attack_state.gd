@@ -20,7 +20,7 @@ func attack_handler(
 		
 		
 func shoot() -> void:
-	state_manager.initialize_knockback_timer(0.1)
+	state_manager.initialize_knockback_timer(0.1, Vector3.ZERO)
 	
 	var arrow = ARROW.instantiate()
 	get_tree().root.call_deferred("add_child", arrow)

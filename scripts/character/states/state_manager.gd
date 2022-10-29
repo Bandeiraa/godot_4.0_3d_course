@@ -12,12 +12,11 @@ class_name CharacterStateManager
 
 var is_attacking: bool = false
 var on_knockback: bool = false
+var knockback_direction: Vector3 = Vector3.ZERO
 
 func update(state: PhysicsDirectBodyState3D) -> void:
-	var previous_input: Vector3 = move_state.previous_input
-	
 	if on_knockback:
-		knockback_state.horizontal_movement(previous_input, state)
+		knockback_state.horizontal_movement(knockback_direction, state)
 		return
 		
 	move_state.horizontal_movement(state)
@@ -37,7 +36,12 @@ func update(state: PhysicsDirectBodyState3D) -> void:
 		)
 		
 		
-func initialize_knockback_timer(length: float) -> void:
+func initialize_knockback_timer(length: float, direction: Vector3) -> void:
+	knockback_direction = direction
+	
+	if knockback_direction == Vector3.ZERO:
+		knockback_direction = move_state.previous_input
+		
 	knockback_timer.start(length)
 	character.freeze = false
 	on_knockback = true
